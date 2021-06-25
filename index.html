@@ -17,147 +17,43 @@
     </style>
 </head>
 <body>
-    <button id="cha-ching"><img src="icons/dollar-sign.png"></button>
-    <button id="fail"><img src="icons/fail.png"></button>
-    <button id="clapping"><img src="icons/clapping.png"></button>
-    <button id="boing"><img src="icons/spring.png"></button>
-    <button id="bell"><img src="icons/bell.png"></button>
-    <button id="game-over"><img src="icons/game-over.png"></button>
-    <button id="gunshot"><img src="icons/gun.png"></button>
-    <button id="fight"><img src="icons/fight.png"></button>
-    <button id="fatality"><img src="icons/fatality.png"></button>
-    <button id="headshot"><img src="icons/headshot.png"></button>
-    <button id="dominating"><img src="icons/dominating.png"></button>
-    <button id="double-kill"><img src="icons/double-kill.png"></button>
-    <button id="meow"><img src="icons/cat.png"></button>
-    <button id="correct"><img src="icons/correct.png"></button>
-    <button id="wrong"><img src="icons/wrong.png"></button>
-    <button id="lion"><img src="icons/lion.png"></button>
-    <button id="magic-wand"><img src="icons/magic-wand.png"></button>
 
     <script src="jquery.min.js"></script>
     <script src="howler.min.js"></script>
     <script>
-        var sound1 = new Howl({
-            src: "audio/cha-ching.mp3"
-        });
-        var sound2 = new Howl({
-            src: "audio/fail.wav"
-        });
-        var sound3 = new Howl({
-            src: "audio/clapping.wav"
-        });
-        var sound4 = new Howl({
-            src: "audio/boing.wav"
-        });
-        var sound5 = new Howl({
-            src: "audio/bell.wav"
-        });
-        var sound6 = new Howl({
-            src: "audio/game-over.wav"
-        });
-        var sound7 = new Howl({
-            src: "audio/gunshot.wav"
-        });
-        var sound8 = new Howl({
-            src: "audio/fight.wav"
-        });
-        var sound9 = new Howl({
-            src: "audio/fatality.wav"
-        });
-        var sound10 = new Howl({
-            src: "audio/headshot.mp3"
-        });
-        var sound11 = new Howl({
-            src: "audio/dominating.mp3"
-        });
-        var sound12 = new Howl({
-            src: "audio/double-kill.mp3"
-        });
-        var sound13 = new Howl({
-            src: "audio/meow.mp3"
-        });
-        var sound14 = new Howl({
-            src: "audio/correct.wav"
-        });
-        var sound15 = new Howl({
-            src: "audio/wrong.wav"
-        });
-        var sound16 = new Howl({
-            src: "audio/lion.mp3"
-        });
-        var sound17 = new Howl({
-            src: "audio/magic-wand.mp3"
-        });
+        var sounds = [
+            ["cha-ching", "audio/cha-ching.mp3", "icons/dollar-sign.png"],
+            ["fail", "audio/fail.wav", "icons/fail.png"],
+            ["clapping", "audio/clapping.wav", "icons/clapping.png"],
+            ["boing", "audio/boing.wav","icons/spring.png"],
+            ["bell", "audio/bell.wav", "icons/bell.png"],
+            ["game-over", "audio/game-over.wav", "icons/game-over.png"],
+            ["gunshot", "audio/gunshot.wav", "icons/gun.png"],
+            ["fight", "audio/fight.wav", "icons/fight.png"],
+            ["fatality", "audio/fatality.wav", "icons/fatality.png"],
+            ["headshot", "audio/headshot.mp3", "icons/headshot.png"],
+            ["dominating", "audio/dominating.mp3","icons/dominating.png"],
+            ["double-kill", "audio/double-kill.mp3", "icons/double-kill.png"],
+            ["meow", "audio/meow.mp3", "icons/cat.png"],
+            ["correct", "audio/correct.wav", "icons/correct.png"],
+            ["wrong", "audio/wrong.wav", "icons/fail.png"],
+            ["lion", "audio/lion.mp3", "icons/lion.png"],
+            ["magic-wand", "audio/magic-wand.mp3", "icons/magic-wand.png"],
+        ];
 
-        $("#cha-ching").click(function() {
-            sound1.play();
-        });
+        var howls = [];
 
-        $("#fail").click(function() {
-            sound2.play();
+        $.each(sounds, function(i, val) {
+            var sound = new Howl({
+                src: val[1]
+            });
+            howls.push(sound);
+            var button = '<button id="' + val[0] + '"><img src="' + val[2] + '"></button>';
+            $("body").append(button);
+            $('#' + val[0]).click(function() {
+                howls[i].play();
+            })
         });
-
-        $("#clapping").click(function() {
-            sound3.play();
-        });
-
-        $("#boing").click(function() {
-            sound4.play();
-        });
-
-        $("#bell").click(function() {
-            sound5.play();
-        });
-
-        $("#game-over").click(function() {
-            sound6.play();
-        });
-
-        $("#gunshot").click(function() {
-            sound7.play();
-        });
-
-        $("#fight").click(function() {
-            sound8.play();
-        });
-
-        $("#fatality").click(function() {
-            sound9.play();
-        });
-
-        $("#headshot").click(function() {
-            sound10.play();
-        });
-
-        $("#dominating").click(function() {
-            sound11.play();
-        });
-
-        $("#double-kill").click(function() {
-            sound12.play();
-        });
-
-        $("#meow").click(function() {
-            sound13.play();
-        });
-
-        $("#correct").click(function() {
-            sound14.play();
-        });
-
-        $("#wrong").click(function() {
-            sound15.play();
-        });
-
-        $("#lion").click(function() {
-            sound16.play();
-        });
-
-        $("#magic-wand").click(function() {
-            sound17.play();
-        });
-
     </script>
 </body>
 </html>
