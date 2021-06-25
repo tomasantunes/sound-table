@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoundTable</title>
+    <style>
+        button {
+            width: 100px;
+            height: 100px;
+        }
+
+        button img {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <button id="cha-ching"><img src="icons/dollar-sign.png"></button>
+    <button id="fail"><img src="icons/fail.png"></button>
+    <button id="clapping"><img src="icons/clapping.png"></button>
+    <button id="boing"><img src="icons/spring.png"></button>
+    <button id="bell"><img src="icons/bell.png"></button>
+    <button id="game-over"><img src="icons/game-over.png"></button>
+
+    <script src="jquery.min.js"></script>
+    <script src="howler.min.js"></script>
+    <script>
+        var sound1 = new Howl({
+            src: "audio/cha-ching.mp3"
+        });
+        var sound2 = new Howl({
+            src: "audio/fail.wav"
+        });
+        var sound3 = new Howl({
+            src: "audio/clapping.wav"
+        });
+        var sound4 = new Howl({
+            src: "audio/boing.wav"
+        });
+        var sound5 = new Howl({
+            src: "audio/bell.wav"
+        });
+        var sound6 = new Howl({
+            src: "audio/game-over.wav"
+        });
+
+        $("#cha-ching").click(function() {
+            sound1.play();
+        });
+
+        $("#fail").click(function() {
+            sound2.play();
+        });
+
+        $("#clapping").click(function() {
+            sound3.play();
+        });
+
+        $("#boing").click(function() {
+            sound4.play();
+        });
+
+        $("#bell").click(function() {
+            sound5.play();
+        });
+
+        $("#game-over").click(function() {
+            sound6.play();
+        });
+
+    </script>
+</body>
+</html>
