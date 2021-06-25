@@ -23,6 +23,7 @@
     <button id="boing"><img src="icons/spring.png"></button>
     <button id="bell"><img src="icons/bell.png"></button>
     <button id="game-over"><img src="icons/game-over.png"></button>
+    <button id="gunshot"><img src="icons/gun.png"></button>
 
     <script src="jquery.min.js"></script>
     <script src="howler.min.js"></script>
@@ -44,6 +45,9 @@
         });
         var sound6 = new Howl({
             src: "audio/game-over.wav"
+        });
+        var sound7 = new Howl({
+            src: "audio/gunshot.wav"
         });
 
         $("#cha-ching").click(function() {
@@ -68,6 +72,10 @@
 
         $("#game-over").click(function() {
             sound6.play();
+        });
+
+        $("#gunshot").click(function() {
+            sound7.play();
         });
 
     </script>
