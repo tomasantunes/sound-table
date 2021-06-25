@@ -30,6 +30,10 @@
     <button id="dominating"><img src="icons/dominating.png"></button>
     <button id="double-kill"><img src="icons/double-kill.png"></button>
     <button id="meow"><img src="icons/cat.png"></button>
+    <button id="correct"><img src="icons/correct.png"></button>
+    <button id="wrong"><img src="icons/wrong.png"></button>
+    <button id="lion"><img src="icons/lion.png"></button>
+    <button id="magic-wand"><img src="icons/magic-wand.png"></button>
 
     <script src="jquery.min.js"></script>
     <script src="howler.min.js"></script>
@@ -72,6 +76,18 @@
         });
         var sound13 = new Howl({
             src: "audio/meow.mp3"
+        });
+        var sound14 = new Howl({
+            src: "audio/correct.wav"
+        });
+        var sound15 = new Howl({
+            src: "audio/wrong.wav"
+        });
+        var sound16 = new Howl({
+            src: "audio/lion.mp3"
+        });
+        var sound17 = new Howl({
+            src: "audio/magic-wand.mp3"
         });
 
         $("#cha-ching").click(function() {
@@ -124,6 +140,22 @@
 
         $("#meow").click(function() {
             sound13.play();
+        });
+
+        $("#correct").click(function() {
+            sound14.play();
+        });
+
+        $("#wrong").click(function() {
+            sound15.play();
+        });
+
+        $("#lion").click(function() {
+            sound16.play();
+        });
+
+        $("#magic-wand").click(function() {
+            sound17.play();
         });
 
     </script>
