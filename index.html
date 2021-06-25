@@ -29,6 +29,7 @@
     <button id="headshot"><img src="icons/headshot.png"></button>
     <button id="dominating"><img src="icons/dominating.png"></button>
     <button id="double-kill"><img src="icons/double-kill.png"></button>
+    <button id="meow"><img src="icons/cat.png"></button>
 
     <script src="jquery.min.js"></script>
     <script src="howler.min.js"></script>
@@ -68,6 +69,9 @@
         });
         var sound12 = new Howl({
             src: "audio/double-kill.mp3"
+        });
+        var sound13 = new Howl({
+            src: "audio/meow.mp3"
         });
 
         $("#cha-ching").click(function() {
@@ -116,6 +120,10 @@
 
         $("#double-kill").click(function() {
             sound12.play();
+        });
+
+        $("#meow").click(function() {
+            sound13.play();
         });
 
     </script>
